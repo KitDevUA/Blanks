@@ -20,52 +20,52 @@
 ## Паралакс элементов при склолинге
 ```HTML
 <div class="parent">
-	<i class="paralax el1" data-k="0.8"></i>
+    <i class="paralax el1" data-k="0.8"></i>
 </div>
 ```
 ```SASS
 .parent
-	position: relative
+    position: relative
 
 .paralax
-	display: block
-	position: absolute
-	background-position: center
-	background-size: 100% 100%
-	background-repeat: no-repeat
-	transition: 1s
+    display: block
+    position: absolute
+    background-position: center
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    transition: 1s
 
 .el1
-	width: 100px
-	height: 100px
-	background-image: url('../img/img.png')
-	top: calc(50% - 0px)
-	left: calc(50% - 0px)
-	z-index: 2
+    width: 100px
+    height: 100px
+    background-image: url('../img/img.png')
+    top: calc(50% - 0px)
+    left: calc(50% - 0px)
+    z-index: 2
 ```
 ```javascript
-let screenH	= $(window).height();
+let screenH = $(window).height();
 $(window).scroll(function() {
-	var scrollTop	= $(window).scrollTop();
-	var scrollB		= scrollTop + screenH;
+    var scrollTop   = $(window).scrollTop();
+    var scrollB     = scrollTop + screenH;
 
-	$('.paralax').each(function() {
-		var el			= $(this),
-			elK			= +el.attr('data-k'),
-			// elTop	= +el.attr('data-top'),
-			parent		= el.parent(),
-			parentTop	= parent.offset().top,
-			parentH		= parent.outerHeight(),
-			marginT		= 0;
+    $('.paralax').each(function() {
+        var el          = $(this),
+            elK         = +el.attr('data-k'),
+            // elTop    = +el.attr('data-top'),
+            parent      = el.parent(),
+            parentTop   = parent.offset().top,
+            parentH     = parent.outerHeight(),
+            marginT     = 0;
 
-		if (
-				(scrollTop >= parentTop && scrollTop <= parentTop+parentH) ||
-				(scrollB >= parentTop && scrollB <= parentTop+parentH) ||
-				(scrollTop < parentTop && scrollB > parentTop+parentH)
-		) {
-			marginT = -1 * (scrollTop - parentTop) * 0.3 * elK;
-			el.css('margin-top', marginT);
-		}
-	});
+        if (
+                (scrollTop >= parentTop && scrollTop <= parentTop+parentH) ||
+                (scrollB >= parentTop && scrollB <= parentTop+parentH) ||
+                (scrollTop < parentTop && scrollB > parentTop+parentH)
+        ) {
+            marginT = -1 * (scrollTop - parentTop) * 0.3 * elK;
+            el.css('margin-top', marginT);
+        }
+    });
 });
 ```
