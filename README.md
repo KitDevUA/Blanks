@@ -50,9 +50,9 @@ $(window).scroll(function() {
 	var scrollB		= scrollTop + screenH;
 
 	$('.paralax').each(function() {
-		var el				= $(this),
-			elK				= +el.attr('data-k'),
-			// elTop			= +el.attr('data-top'),
+		var el			= $(this),
+			elK			= +el.attr('data-k'),
+			// elTop	= +el.attr('data-top'),
 			parent		= el.parent(),
 			parentTop	= parent.offset().top,
 			parentH		= parent.outerHeight(),
