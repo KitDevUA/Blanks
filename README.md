@@ -17,6 +17,20 @@
 ```
 
 
+
+## Удобмные @media-запросы (для мобильной адаптации)
+```SASS
+=r($width)
+    @media only screen and (max-width: $width+ "px")
+        @content
+
+=rmin($width)
+    @media only screen and (min-width: $width+ "px")
+        @content
+```
+
+
+
 ## Паралакс элементов при склолинге
 ```HTML
 <div class="parent">
