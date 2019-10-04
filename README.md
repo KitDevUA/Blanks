@@ -51,19 +51,18 @@ $(window).scroll(function() {
 
 	$('.paralax').each(function() {
 		var el				= $(this),
-				elK				= +el.attr('data-k'),
-				// elTop			= +el.attr('data-top'),
-				parent		= el.parent(),
-				parentTop	= parent.offset().top,
-				parentH		= parent.outerHeight(),
-				marginT		= 0;
+			elK				= +el.attr('data-k'),
+			// elTop			= +el.attr('data-top'),
+			parent		= el.parent(),
+			parentTop	= parent.offset().top,
+			parentH		= parent.outerHeight(),
+			marginT		= 0;
 
-		if	(
-					(scrollTop >= parentTop && scrollTop <= parentTop+parentH) ||
-					(scrollB >= parentTop && scrollB <= parentTop+parentH) ||
-					(scrollTop < parentTop && scrollB > parentTop+parentH)
-				)
-		{
+		if (
+				(scrollTop >= parentTop && scrollTop <= parentTop+parentH) ||
+				(scrollB >= parentTop && scrollB <= parentTop+parentH) ||
+				(scrollTop < parentTop && scrollB > parentTop+parentH)
+		) {
 			marginT = -1 * (scrollTop - parentTop) * 0.3 * elK;
 			el.css('margin-top', marginT);
 		}
