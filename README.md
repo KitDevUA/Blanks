@@ -1,6 +1,6 @@
 # Мои заготовки и наработки
 
-
+## Базовое
 **jQuery**
 ```HTML
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -17,7 +17,6 @@
 ```
 
 
-
 ## Удобмные @media-запросы (для мобильной адаптации)
 ```SASS
 =r($width)
@@ -28,7 +27,6 @@
     @media only screen and (min-width: $width+ "px")
         @content
 ```
-
 
 
 ## Паралакс элементов при склолинге
