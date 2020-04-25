@@ -18,7 +18,7 @@
 ```
 
 
-## Удобмные @media-запросы (для мобильной адаптации)
+## Удобные @media-запросы (для мобильной адаптации)
 ```SASS
 =r($width)
 	@media only screen and (max-width: $width+ "px")
