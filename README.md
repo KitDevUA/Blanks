@@ -30,6 +30,20 @@
 ```
 
 
+## Mixin для placeholder
+```SASS
+=placeholder()
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+```
+
+
 ## Плавный скролинг к элементу
 ```javascript
 $('.scrollTo').click( function(){
