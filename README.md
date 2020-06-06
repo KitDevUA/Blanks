@@ -30,6 +30,22 @@
 ```
 
 
+## Mixin для изменения скролбара (дорабатывается)
+```SASS
+=scrollbars($size, $foreground-color, $background-color)
+	::-webkit-scrollbar
+		width:  $size
+		height: $size
+	::-webkit-scrollbar-thumb
+		background: $foreground-color
+	::-webkit-scrollbar-track
+		background: $background-color
+	body
+		scrollbar-face-color: $foreground-color
+		scrollbar-track-color: $background-color
+```
+
+
 ## Mixin для placeholder
 ```SASS
 =placeholder()
