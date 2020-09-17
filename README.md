@@ -23,9 +23,15 @@
 =r($width)
 	@media only screen and (max-width: $width+ "px")
 		@content
-
 =rmin($width)
 	@media only screen and (min-width: $width+ "px")
+		@content
+
+=rh($height)
+	@media only screen and (max-height: $height+ "px")
+		@content
+=rhmin($height)
+	@media only screen and (min-height: $height+ "px")
 		@content
 ```
 
@@ -57,6 +63,26 @@
 		@content
 	&:-ms-input-placeholder
 		@content
+```
+
+
+## Mixin для keyframes
+```SASS
+=keyframes($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
+
++keyframes(example)
+	0%
+		background-color: red
+	100%
+		background-color: blue
 ```
 
 
