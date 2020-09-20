@@ -83,6 +83,7 @@
 		background-color: red
 	100%
 		background-color: blue
+animation: example 2s infinite linear
 ```
 
 
