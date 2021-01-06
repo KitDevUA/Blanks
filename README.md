@@ -33,6 +33,10 @@
 =rhmin($height)
 	@media only screen and (min-height: $height+ "px")
 		@content
+
+=rfromto($widthFrom, $widthTo)
+	@media only screen and (min-width: $widthFrom+ "px") and (max-width: $widthTo+ "px")
+		@content
 ```
 
 
