@@ -91,6 +91,20 @@ animation: example 2s infinite linear
 ```
 
 
+## Mixin для преобразования пикселей в vw
+```SASS
+@function vwu($px, $viewport)
+	@return $px / $viewport * 100vw
+```
+
+
+## Mixin для преобразования пикселей в %
+```SASS
+@function percent($px, $width)
+	@return $px / $width * 100%
+```
+
+
 ## Плавный скролинг к элементу
 ```javascript
 $('.scrollTo').click( function(){
