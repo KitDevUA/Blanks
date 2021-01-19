@@ -133,46 +133,56 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```SASS
 .parent
 	position: relative
-
 .paralax
-	display: block
-	position: absolute
-	background-position: center
-	background-size: 100% 100%
-	background-repeat: no-repeat
-	transition: 1s
-
-.el1
-	width: 100px
-	height: 100px
-	background-image: url('../img/img.png')
-	top: calc(50% - 0px)
-	left: calc(50% - 0px)
-	z-index: 2
+		display: none
+		position: absolute
+		transition: 0.1s
+		transition-timing-function: linear
+		z-index: 1
+		&.el1
+			width: 300px
+			top: calc(50% + 0px)
+			left: calc(50% + 0px)
 ```
 ```javascript
-let screenH = $(window).height();
-$(window).scroll(function() {
-	var scrollTop   = $(window).scrollTop();
-	var scrollB     = scrollTop + screenH;
+// floating elements
+let screenH		= $(window).height(),
+	scrollTop	= $(window).scrollTop(),
+	scrollB		= scrollTop + screenH;
 
-	$('.paralax').each(function() {
-		var el          = $(this),
-			elK         = +el.attr('data-k'),
-			// elTop    = +el.attr('data-top'),
-			parent      = el.parent(),
-			parentTop   = parent.offset().top,
-			parentH     = parent.outerHeight(),
-			marginT     = 0;
+$(window).scroll(function() {
+	scrollTop	= $(window).scrollTop();
+	scrollB		= scrollTop + screenH;
+	floating();
+});
+
+function floating() {
+	$('.floating').each(function() {
+		var el			= $(this),
+			elK			= el.attr('data-k') ? +el.attr('data-k') : 1,
+			direction	= el.attr('data-direction') ? -1 : 1,
+			parent		= el.parent(),
+			parentTop	= parent.offset().top,
+			parentH		= parent.outerHeight(),
+			marginT		= 0,
+			rotate		= 0;
 
 		if (
 				(scrollTop >= parentTop && scrollTop <= parentTop+parentH) ||
 				(scrollB >= parentTop && scrollB <= parentTop+parentH) ||
 				(scrollTop < parentTop && scrollB > parentTop+parentH)
 		) {
-			marginT = -1 * (scrollTop - parentTop) * 0.3 * elK;
-			el.css('margin-top', marginT);
+			marginT	= -1 * (scrollTop - parentTop) * 0.3 * elK;
+			rotate	= direction * (scrollTop - parentTop) * 0.05 * elK;
+			el.css({
+				display:			'block',
+				'margin-top':		marginT,
+				WebkitTransform:	'rotate(' + rotate + 'deg)',
+				'-moz-transform':	'rotate(' + rotate + 'deg)',
+			});
 		}
 	});
-});
+}
+floating();
+// /floating elements
 ```
