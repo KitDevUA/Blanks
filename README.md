@@ -107,6 +107,7 @@ animation: example 2s infinite linear
 
 ## Плавный скролинг к элементу
 ```javascript
+// Scroll to
 $('.scrollTo').click( function(){
 	var scroll_el	= $(this).attr('href'),
 		speed		= $(this).is("[data-speed]") ? +$(this).attr('data-speed') : 500;
@@ -114,6 +115,7 @@ $('.scrollTo').click( function(){
 		$('html, body').animate({ scrollTop: $(scroll_el).offset().top }, speed);
 	return false;
 });
+// /Scroll to
 ```
 
 ## .htaccess редирект на https
