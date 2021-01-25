@@ -98,7 +98,6 @@ animation: example 2s infinite linear
 ```
 
 
-
 ## Mixin для преобразования пикселей в %
 ```SASS
 @function percent($px, $width)
@@ -106,19 +105,29 @@ animation: example 2s infinite linear
 ```
 
 
-
 ## Автозамена для smart-mobile.sass
 ### Stage 1
 ```
-\: ([0-9.-]+)px
-: vw($1)
+([+-]*)([ ]*)([0-9.-]+)px\)
+$1$2#{vw($3)})
 ```
 ### Stage 2
 ```
-\: ([0-9.-]+)px
-: vw($1)
+ ([0-9.-]+)px
+ vw($1)
 ```
 
+
+### Stage 1
+```
+([+-]*)([ ]*)([0-9.-]+)px\)
+$1$2#{vw($3)})
+```
+### Stage 2
+```
+ ([0-9.-]+)px
+ vw($1)
+```
 
 
 ## Плавный скролинг к элементу
