@@ -105,6 +105,19 @@ animation: example 2s infinite linear
 ```
 
 
+## Автозамена для smart-mobile.sass
+### Stage 1
+```
+\: ([0-9.-]+)px
+: vw($1)
+```
+### Stage 2
+```
+\: ([0-9.-]+)px
+: vw($1)
+```
+
+
 ## Плавный скролинг к элементу
 ```javascript
 // Scroll to
