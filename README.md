@@ -106,6 +106,10 @@ animation: example 2s infinite linear
 
 
 ## Автозамена для smart-mobile.sass
+### Медиа-параметры
+```
+@media only screen and (min-width: 992PX) and (max-width: 1450PX)
+```
 ### Stage 1
 ```
 ([+-]*)([ ]*)([0-9.-]+)px\)
