@@ -250,4 +250,3 @@ function floating() {
 floating();
 // /floating elements
 ```
-
