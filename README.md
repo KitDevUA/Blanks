@@ -135,6 +135,51 @@ $('.scrollTo').click( function(){
 // /Scroll to
 ```
 
+
+## Маска для ввода номера телефона для нескольких стран
+```javascript
+// Phone mask
+// js file: https://unpkg.com/imask
+
+const phoneMaskInputs	= document.querySelectorAll('.phone-mask');
+const masksOptions		= {
+	mask: [
+		{
+			mask: '+380 00 000 00 00',
+			startsWith: '38',
+			country: 'Ukraine'
+		},
+		{
+			mask: '+0 000 000 00 00',
+			startsWith: '7',
+			country: 'Russia'
+		},
+		{
+			mask: '+375 00 000 00 00',
+			startsWith: '37',
+			country: 'Belarus'
+		},
+		{
+			mask: '+0000000000000',
+			startsWith: '',
+			country: 'unknown'
+		},
+	],
+	dispatch: function (appended, dynamicMasked) {
+		var number = (dynamicMasked.value + appended).replace(/\D/g,'');
+
+		return dynamicMasked.compiledMasks.find(function (m) {
+			return number.indexOf(m.startsWith) === 0;
+		});
+	}
+};
+
+for ( const item of phoneMaskInputs ) {
+	new IMask(item, masksOptions);
+}
+// /Phone mask
+```
+
 ## .htaccess редирект на https
 ```
 RewriteEngine On
@@ -205,3 +250,4 @@ function floating() {
 floating();
 // /floating elements
 ```
+
