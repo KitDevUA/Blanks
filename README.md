@@ -250,3 +250,37 @@ function floating() {
 floating();
 // /floating elements
 ```
+
+## Slick-slider
+```javascript
+// Slider
+let $gallery	= $('#gallery .inner');
+
+$gallery.slick({
+	infinite:		true,
+	slidesToShow:	3,
+	slidesToScroll:	1,
+	arrows:			false,
+	adaptiveHeight:	true,
+	swipeToSlide:	true,
+	centerMode:		true,
+	responsive: [
+		{
+			breakpoint: 991,
+			settings: {
+				slidesToShow:	1,
+				swipe:			true,
+			}
+		},
+	],
+});
+$('#gallery').on('click', '.control.prev', function() {
+	$gallery.slick('slickPrev');
+	return false;
+});
+$('#gallery').on('click', '.control.next', function() {
+	$gallery.slick('slickNext');
+	return false;
+});
+// /Slider
+```
