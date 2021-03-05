@@ -167,7 +167,7 @@ $('.scrollTo').click( function(){
 
 <a name="content10"></a><br><br>
 ## Маска для ввода номера телефона для нескольких стран
-[imask.js](http://foxk.ru/imask/imask.js)
+[imask.js](https://foxk.ru/imask/imask.js)
 ```javascript
 // Phone mask
 const phoneMaskInputs	= document.querySelectorAll('.phone-mask');
@@ -215,7 +215,7 @@ for ( const item of phoneMaskInputs ) {
 ```
 RewriteEngine On
 RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{https:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```
 
@@ -287,9 +287,9 @@ floating();
 
 <a name="content13"></a><br><br>
 ## Slick-slider
-[slick.js](http://foxk.ru/slider/slick.js)<br>
-[slick.css](http://foxk.ru/slider/slick.css)<br>
-[slick-theme.css](http://foxk.ru/slider/slick-theme.css) (необязательно)
+[slick.js](https://foxk.ru/slider/slick.js)<br>
+[slick.css](https://foxk.ru/slider/slick.css)<br>
+[slick-theme.css](https://foxk.ru/slider/slick-theme.css) (необязательно)
 ```javascript
 // Slider
 let $gallery	= $('#gallery .inner');
@@ -326,8 +326,8 @@ $('#gallery').on('click', '.control.next', function() {
 
 <a name="content14"></a><br><br>
 ## wow.js + animate.css
-[animate.css](http://foxk.ru/animations/animate.css)<br>
-[wow.min.js](http://foxk.ru/animations/wow.min.js)<br>
+[animate.css](https://foxk.ru/animations/animate.css)<br>
+[wow.min.js](https://foxk.ru/animations/wow.min.js)<br>
 [Документация по animate.css](https://animate.style/)
 ```javascript
 var	wow = new WOW({
