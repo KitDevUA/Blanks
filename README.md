@@ -1,7 +1,7 @@
 # Мои заготовки и наработки
 [**(Оформление README.md)**](https://gist.github.com/Jekins/2bf2d0638163f1294637)<br>
 
-<br>
+
 ## Содержание:
 [1. Базовое](#content1)<br>
 [2. Удобные @media-запросы](#content2)<br>
@@ -10,7 +10,7 @@
 [5. Mixin для keyframes](#content5)<br>
 [6. Mixin для преобразования пикселей в vw](#content6)<br>
 [7. Mixin для преобразования пикселей в %](#content7)<br>
-[8. Автозамена для smart-mobile.sass](#content8)<br>
+[8. Автозамена для _smart-mobile.sass](#content8)<br>
 [9. Плавный скролинг к элементу](#content9)<br>
 [10. Маска для ввода номера телефона для нескольких стран](#content10)<br>
 [11. .htaccess редирект на https](#content11)<br>
@@ -133,7 +133,7 @@ animation: example 2s infinite linear
 
 
 <a name="content8"></a><br><br>
-## Автозамена для smart-mobile.sass
+## Автозамена для _smart-mobile.sass
 ### Медиа-параметры
 ```
 @media only screen and (min-width: 992PX) and (max-width: 1450PX)
@@ -167,7 +167,7 @@ $('.scrollTo').click( function(){
 
 <a name="content10"></a><br><br>
 ## Маска для ввода номера телефона для нескольких стран
-[https://unpkg.com/imask](https://unpkg.com/imask)
+[imask.js](http://foxk.ru/imask/imask.js)
 ```javascript
 // Phone mask
 const phoneMaskInputs	= document.querySelectorAll('.phone-mask');
