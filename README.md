@@ -252,8 +252,8 @@ floating();
 ```
 
 ## Slick-slider
-[slick.js](http://foxk.ru/slider/slick.js)
-[slick.css](http://foxk.ru/slider/slick.css)
+[slick.js](http://foxk.ru/slider/slick.js)<br>
+[slick.css](http://foxk.ru/slider/slick.css)<br>
 [slick-theme.css](http://foxk.ru/slider/slick-theme.css) (необязательно)
 ```javascript
 // Slider
