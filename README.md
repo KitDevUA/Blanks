@@ -5,7 +5,8 @@
 [Базовое](#Базовое)<br>
 
 
-<a href="https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46" target="_blank">**(Оформление README.md)**</a>
+<a href="https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46" target="_blank">**(Оформление README.md)**</a><br>
+[**(Оформление README.md)**](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)<br>
 
 ## Базовое
 **jQuery**
