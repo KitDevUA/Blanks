@@ -252,6 +252,9 @@ floating();
 ```
 
 ## Slick-slider
+[slick.js](http://foxk.ru/slider/slick.js)
+[slick.css](http://foxk.ru/slider/slick.css)
+[slick-theme.css](http://foxk.ru/slider/slick-theme.css) (необязательно)
 ```javascript
 // Slider
 let $gallery	= $('#gallery .inner');
