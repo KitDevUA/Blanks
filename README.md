@@ -8,7 +8,8 @@
 
 
 
-<a name="content1"></a>## Базовое
+<a name="content1"></a><br><br>
+## Базовое
 **jQuery**
 ```HTML
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -24,7 +25,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 ```
 
-<a name="content2"></a>
+<a name="content2"></a><br><br>
 ## Удобные @media-запросы (для мобильной адаптации)
 ```SASS
 =r($width)
@@ -46,7 +47,7 @@
 		@content
 ```
 
-<a name="content3"></a><br>
+<a name="content3"></a><br><br>
 ## Mixin для изменения скролбара (дорабатывается)
 ```SASS
 =scrollbars($size, $foreground-color, $background-color)
