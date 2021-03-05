@@ -1,14 +1,14 @@
 # Мои заготовки и наработки
 
 ## Содержание:
-[Базовое](#базовое)<br>
-[Базовое](#Базовое)<br>
+[1. Базовое](#content1)<br>
+[2. Удобные @media-запросы](#content2)<br>
+[3. Mixin для изменения скролбара](#content3)<br>
 
 
-<a href="https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46" target="_blank">**(Оформление README.md)**</a><br>
-[**(Оформление README.md)**](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)<br>
+[**(Оформление README.md)**](https://gist.github.com/Jekins/2bf2d0638163f1294637)<br>
 
-## Базовое
+<a name="content1"></a>## Базовое
 **jQuery**
 ```HTML
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -24,7 +24,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 ```
 
-
+<a name="content2"></a>
 ## Удобные @media-запросы (для мобильной адаптации)
 ```SASS
 =r($width)
@@ -46,7 +46,7 @@
 		@content
 ```
 
-
+<a name="content3"></a><br>
 ## Mixin для изменения скролбара (дорабатывается)
 ```SASS
 =scrollbars($size, $foreground-color, $background-color)
