@@ -113,12 +113,12 @@ animation: example 2s infinite linear
 ```
 @media only screen and (min-width: 992PX) and (max-width: 1450PX)
 ```
-### Stage 1
+Stage 1
 ```
 ([+-]*)([ ]*)([0-9.-]+)px\)
 $1$2#{vw($3)})
 ```
-### Stage 2
+Stage 2
 ```
  ([0-9.-]+)px
  vw($1)
