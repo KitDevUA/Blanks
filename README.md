@@ -192,16 +192,16 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```
 
 
-## Паралакс элементов при склолинге
+## Параллакс элементов при склолинге
 ```HTML
 <div class="parent">
-	<i class="paralax el1" data-k="0.8"></i>
+	<i class="parallax el1" data-k="0.8"></i>
 </div>
 ```
 ```SASS
 .parent
 	position: relative
-.paralax
+.parallax
 		display: none
 		position: absolute
 		transition: 0.1s
