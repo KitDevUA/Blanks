@@ -16,6 +16,7 @@
 [11. .htaccess редирект на https](#content11)<br>
 [12. Паралакс элементов при склолинге](#content12)<br>
 [13. Slick-slider](#content13)<br>
+[13. wow.js + animate.css](#content14)<br>
 
 
 
@@ -321,3 +322,51 @@ $('#gallery').on('click', '.control.next', function() {
 });
 // /Slider
 ```
+
+
+<a name="content14"></a><br><br>
+## wow.js + animate.css
+[animate.css](http://foxk.ru/animations/animate.css)<br>
+[wow.min.js](http://foxk.ru/animations/wow.min.js)<br><br>
+
+[Документация по animate.css](https://animate.style/)
+```javascript
+var	wow = new WOW({
+	boxClass:		'wow',
+	animateClass:	'animated',
+	offset:			0,
+	mobile:			false,
+	live:			true,
+});
+wow.init();
+```
+```HTML
+<div class="wow fadeIn"></div>
+```
+```
+data-wow-duration="" Длительность анимации
+data-wow-delay="" Задержка
+data-wow-offset="" Отступ сверху
+data-wow-iteration="" Количество повторов
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
