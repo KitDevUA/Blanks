@@ -166,10 +166,9 @@ $('.scrollTo').click( function(){
 
 <a name="content10"></a><br><br>
 ## Маска для ввода номера телефона для нескольких стран
+[https://unpkg.com/imask](https://unpkg.com/imask)
 ```javascript
 // Phone mask
-// js file: https://unpkg.com/imask
-
 const phoneMaskInputs	= document.querySelectorAll('.phone-mask');
 const masksOptions		= {
 	mask: [
