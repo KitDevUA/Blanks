@@ -2,26 +2,8 @@
 [**(Оформление README.md)**](https://gist.github.com/Jekins/2bf2d0638163f1294637)<br>
 
 
-## Содержание:
-[1. Базовое](#content1)<br>
-[2. Удобные @media-запросы](#content2)<br>
-[3. Mixin для изменения скролбара](#content3)<br>
-[4. Mixin для placeholder](#content4)<br>
-[5. Mixin для keyframes](#content5)<br>
-[6. Mixin для преобразования пикселей в vw](#content6)<br>
-[7. Mixin для преобразования пикселей в %](#content7)<br>
-[8. Автозамена для _smart-mobile.sass](#content8)<br>
-[9. Плавный скролинг к элементу](#content9)<br>
-[10. Маска для ввода номера телефона для нескольких стран](#content10)<br>
-[11. .htaccess редирект на https](#content11)<br>
-[12. Паралакс элементов при склолинге](#content12)<br>
-[13. Slick-slider](#content13)<br>
-[13. wow.js + animate.css](#content14)<br>
-
-
 
 <br>
-<a name="content1"></a><br><br>
 ## Базовое
 **jQuery**
 ```HTML
@@ -39,7 +21,6 @@
 ```
 
 
-<a name="content2"></a><br><br>
 ## Удобные @media-запросы (для мобильной адаптации)
 ```SASS
 =r($width)
@@ -62,7 +43,6 @@
 ```
 
 
-<a name="content3"></a><br><br>
 ## Mixin для изменения скролбара (дорабатывается)
 ```SASS
 =scrollbars($size, $foreground-color, $background-color)
@@ -79,7 +59,6 @@
 ```
 
 
-<a name="content4"></a><br><br>
 ## Mixin для placeholder
 ```SASS
 =placeholder()
@@ -94,7 +73,6 @@
 ```
 
 
-<a name="content5"></a><br><br>
 ## Mixin для keyframes
 ```SASS
 =keyframes($name)
@@ -116,7 +94,6 @@ animation: example 2s infinite linear
 ```
 
 
-<a name="content6"></a><br><br>
 ## Mixin для преобразования пикселей в vw
 ```SASS
 @function vwu($px, $viewport)
@@ -124,7 +101,6 @@ animation: example 2s infinite linear
 ```
 
 
-<a name="content7"></a><br><br>
 ## Mixin для преобразования пикселей в %
 ```SASS
 @function percent($px, $width)
@@ -132,7 +108,6 @@ animation: example 2s infinite linear
 ```
 
 
-<a name="content8"></a><br><br>
 ## Автозамена для _smart-mobile.sass
 ### Медиа-параметры
 ```
@@ -150,7 +125,6 @@ $1$2#{vw($3)})
 ```
 
 
-<a name="content9"></a><br><br>
 ## Плавный скролинг к элементу
 ```javascript
 // Scroll to
@@ -165,7 +139,6 @@ $('.scrollTo').click( function(){
 ```
 
 
-<a name="content10"></a><br><br>
 ## Маска для ввода номера телефона для нескольких стран
 [imask.js](https://foxk.ru/imask/imask.js)
 ```javascript
@@ -210,7 +183,6 @@ for ( const item of phoneMaskInputs ) {
 ```
 
 
-<a name="content11"></a><br><br>
 ## .htaccess редирект на https
 ```
 RewriteEngine On
@@ -220,7 +192,6 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```
 
 
-<a name="content12"></a><br><br>
 ## Паралакс элементов при склолинге
 ```HTML
 <div class="parent">
@@ -285,7 +256,6 @@ floating();
 ```
 
 
-<a name="content13"></a><br><br>
 ## Slick-slider
 [slick.js](https://foxk.ru/slider/slick.js)<br>
 [slick.css](https://foxk.ru/slider/slick.css)<br>
@@ -324,7 +294,6 @@ $('#gallery').on('click', '.control.next', function() {
 ```
 
 
-<a name="content14"></a><br><br>
 ## wow.js + animate.css
 [animate.css](https://foxk.ru/animations/animate.css)<br>
 [wow.min.js](https://foxk.ru/animations/wow.min.js)<br>
