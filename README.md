@@ -1,4 +1,5 @@
 # Мои заготовки и наработки
+[**(Оформление README.md)**](https://gist.github.com/Jekins/2bf2d0638163f1294637)<br>
 
 ## Содержание:
 [1. Базовое](#content1)<br>
@@ -6,7 +7,6 @@
 [3. Mixin для изменения скролбара](#content3)<br>
 
 
-[**(Оформление README.md)**](https://gist.github.com/Jekins/2bf2d0638163f1294637)<br>
 
 <a name="content1"></a>## Базовое
 **jQuery**
