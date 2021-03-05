@@ -327,8 +327,7 @@ $('#gallery').on('click', '.control.next', function() {
 <a name="content14"></a><br><br>
 ## wow.js + animate.css
 [animate.css](http://foxk.ru/animations/animate.css)<br>
-[wow.min.js](http://foxk.ru/animations/wow.min.js)<br><br>
-
+[wow.min.js](http://foxk.ru/animations/wow.min.js)<br>
 [Документация по animate.css](https://animate.style/)
 ```javascript
 var	wow = new WOW({
