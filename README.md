@@ -1,4 +1,9 @@
 # Мои заготовки и наработки
+
+##Содержание:
+[Базовое](#long-header)
+
+
 <a href="https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46" target="_blank">**(Оформление README.md)**</a>
 
 ## Базовое
