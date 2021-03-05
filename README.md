@@ -1,6 +1,7 @@
 # Мои заготовки и наработки
 [**(Оформление README.md)**](https://gist.github.com/Jekins/2bf2d0638163f1294637)<br>
 
+<br>
 ## Содержание:
 [1. Базовое](#content1)<br>
 [2. Удобные @media-запросы](#content2)<br>
@@ -8,6 +9,7 @@
 
 
 
+<br><br>
 <a name="content1"></a><br><br>
 ## Базовое
 **jQuery**
