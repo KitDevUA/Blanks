@@ -1,5 +1,6 @@
 # Мои заготовки и наработки
-[**(Оформление README.md)**](https://gist.github.com/Jekins/2bf2d0638163f1294637)<br>
+[**(Оформление README.md #1)**](https://gist.github.com/Jekins/2bf2d0638163f1294637)<br>
+[**(Оформление README.md #2)**](https://github.com/sandino/Markdown-Cheatsheet/blob/master/README.md)<br>
 
 
 ## Базовое
@@ -167,7 +168,7 @@ const masksOptions		= {
 	],
 	dispatch: function (appended, dynamicMasked) {
 		var number = (dynamicMasked.value + appended).replace(/\D/g,'');
-
+		
 		return dynamicMasked.compiledMasks.find(function (m) {
 			return number.indexOf(m.startsWith) === 0;
 		});
@@ -178,6 +179,93 @@ for ( const item of phoneMaskInputs ) {
 	new IMask(item, masksOptions);
 }
 // /Phone mask
+```
+
+
+## Таймер, учитывающий часовые зоны
+```php
+<?php
+	$addHours	= 0; // Сколько добавить часов
+	$addMinutes	= 15; // Сколько добавить минут
+	
+	
+	if ( isset($_COOKIE['timestamp']) && (int)$_COOKIE['timestamp'] > 0 )
+		$timestamp	= (int)$_COOKIE['timestamp'];
+	else {
+		$timestamp	= strtotime( gmdate("Y-m-d H:i:s", time()) ); // gmt
+		$timestamp	= $timestamp + $addHours * 60 * 60 + $addMinutes * 60; // add time
+		setcookie('timestamp', $timestamp, strtotime('+1 days'), '/');
+	}
+	
+?>
+```
+
+```html
+<script>
+	var	eDay	= '<?= date( 'd', $timestamp ) ?>',
+		eMonth	= '<?= date( 'm', $timestamp ) ?>',
+		eYear	= '<?= date( 'Y', $timestamp ) ?>',
+		eHour	= '<?= date( 'H', $timestamp ) ?>',
+		eMinute	= '<?= date( 'i', $timestamp ) ?>',
+		eSecond	= '<?= date( 's', $timestamp ) ?>';
+</script>
+
+<div class="timer">
+	<span id="tHours" class="number">00</span>
+	<span class="delimeter">:</span>
+	<span id="tMinutes" class="number">00</span>
+	<span class="delimeter">:</span>
+	<span id="tSeconds" class="number">00</span>
+</div>
+```
+
+```javascript
+// Timer
+function prefInt( number ) {
+	let result = number;
+	if ( +number < 10 )
+		result	= "0"+number;
+	return result;
+}
+
+function timerTic() {
+	let	dateNow		= new Date(),
+		dateFuture	= new Date(eYear+'-'+eMonth+'-'+eDay+'T'+eHour+':'+eMinute+':'+eSecond+'.000Z'),
+		delta		= 0,
+		days		= 0,
+		hours		= 0,
+		minutes		= 0,
+		seconds		= 0;
+	
+	if ( dateFuture > dateNow ) {
+		delta	= Math.abs(dateFuture - dateNow) / 1000;
+		
+		days	= Math.floor(delta / 86400);
+		delta	-= days * 86400;
+		
+		if ( days > 0 ) {
+			hours	= Math.floor(delta / 3600) % 24;
+			delta	-= hours * 3600;
+			hours	= hours + (days * 24);
+		}
+		else {
+			hours	= Math.floor(delta / 3600) % 24;
+			delta -= hours * 3600;
+		}
+		
+		minutes	= Math.floor(delta / 60) % 60;
+		delta -= minutes * 60;
+		
+		seconds	= Math.floor(delta % 60);  // in theory the modulus is not required
+	}
+	
+	$('#tHours').text( prefInt(hours) );
+	$('#tMinutes').text( prefInt(minutes) );
+	$('#tSeconds').text( prefInt(seconds) );
+}
+timerTic();
+setInterval( timerTic, 1000 );
+// /Timer
 ```
 
 
