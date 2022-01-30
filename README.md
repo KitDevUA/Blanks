@@ -3,7 +3,7 @@
 [**(Оформление README.md #2)**](https://github.com/sandino/Markdown-Cheatsheet/blob/master/README.md)<br>
 
 
-## Базовое
+## Basic
 **jQuery**
 ```HTML
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -20,7 +20,7 @@
 ```
 
 
-## Удобные @media-запросы (для мобильной адаптации)
+## @media - Удобные @media-запросы (для мобильной адаптации)
 ```SASS
 =r($width)
 	@media only screen and (max-width: $width+ "px")
@@ -124,7 +124,16 @@ Stage 2
 ```
 
 
-## Плавный скролинг к элементу
+## .htaccess редирект на https
+```
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{https:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+```
+
+
+## ScrollTo - Плавный скролинг к элементу
 ```javascript
 // Scroll to
 $('.scrollTo').click( function(){
@@ -138,51 +147,7 @@ $('.scrollTo').click( function(){
 ```
 
 
-## Маска для ввода номера телефона для нескольких стран
-[imask.js](https://foxk.ru/imask/imask.js)
-```javascript
-// Phone mask
-const phoneMaskInputs	= document.querySelectorAll('.phone-mask');
-const masksOptions		= {
-	mask: [
-		{
-			mask: '+380 00 000 00 00',
-			startsWith: '38',
-			country: 'Ukraine'
-		},
-		{
-			mask: '+0 000 000 00 00',
-			startsWith: '7',
-			country: 'Russia'
-		},
-		{
-			mask: '+375 00 000 00 00',
-			startsWith: '37',
-			country: 'Belarus'
-		},
-		{
-			mask: '+0000000000000',
-			startsWith: '',
-			country: 'unknown'
-		},
-	],
-	dispatch: function (appended, dynamicMasked) {
-		var number = (dynamicMasked.value + appended).replace(/\D/g,'');
-		
-		return dynamicMasked.compiledMasks.find(function (m) {
-			return number.indexOf(m.startsWith) === 0;
-		});
-	}
-};
-
-for ( const item of phoneMaskInputs ) {
-	new IMask(item, masksOptions);
-}
-// /Phone mask
-```
-
-
-## Таймер, учитывающий часовые зоны
+## Timer - Таймер, учитывающий часовые зоны
 ```php
 <?php
 	$addHours	= 0; // Сколько добавить часов
@@ -269,16 +234,148 @@ setInterval( timerTic, 1000 );
 ```
 
 
-## .htaccess редирект на https
-```
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteCond %{https:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+## Slick-slider
+[slick.js](https://foxk.ru/slider/slick.js)<br>
+[slick.css](https://foxk.ru/slider/slick.css)<br>
+[slick-theme.css](https://foxk.ru/slider/slick-theme.css) (необязательно)
+```javascript
+// Slider
+let $gallery	= $('#gallery .inner');
+
+$gallery.slick({
+	infinite:		true,
+	slidesToShow:	3,
+	slidesToScroll:	1,
+	arrows:			false,
+	adaptiveHeight:	true,
+	swipeToSlide:	true,
+	centerMode:		true,
+	responsive: [
+		{
+			breakpoint: 991,
+			settings: {
+				slidesToShow:	1,
+				swipe:			true,
+			}
+		},
+	],
+});
+$('#gallery').on('click', '.control.prev', function() {
+	$gallery.slick('slickPrev');
+	return false;
+});
+$('#gallery').on('click', '.control.next', function() {
+	$gallery.slick('slickNext');
+	return false;
+});
+// /Slider
 ```
 
 
-## Параллакс элементов при склолинге
+## Popup - Всплывающее окно
+```HTML
+<div id="popupID" class="popup">
+	<i class="bg"></i>
+	<div class="box">
+		<button class="close"></button>
+		<div class="inner">
+			
+		</div>
+	</div>
+</div>
+```
+```SASS
+.popup
+	width: 100%
+	height: 100%
+	justify-content: center
+	align-items: center
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 10
+	&:not(.opened)
+		display: none
+	i.bg
+		width: 100%
+		height: 100%
+		background-color: rgba($black, .8)
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 1
+	.box
+		width: calc(100% - 40px)
+		max-height: 90%
+		max-width: 1000px
+		padding-top: 40px
+		background-color: #fff
+		position: relative
+		z-index: 2
+		overflow: hidden
+		flex-shrink: 0
+		button.close
+			width: 35px
+			height: 35px
+			border-radius: 50%
+			border: 2px solid #000
+			background-color: #fff
+			display: flex
+			justify-content: center
+			align-items: center
+			position: absolute
+			top: 10px
+			right: 10px
+			z-index: 5
+			&::before,
+			&::after
+				content: ''
+				display: block
+				width: 55%
+				height: 2px
+				background-color: #000
+				position: absolute
+			&::before
+				transform: rotate(-45deg)
+			&::after
+				transform: rotate(45deg)
+			&:hover
+				&::before,
+				&::after
+					width: 70%
+		.inner
+			padding: 0 15px 30px
+			overflow-y: auto
+			*
+				flex-shrink: 0
+```
+```javascript
+// Popups
+function openPopup( $id ) {
+	$('body').addClass('popupOpened');
+	$($id).addClass('opened');
+}
+$('body').on('click', '.openPopup', function() {
+	openPopup( $(this).attr('href') );
+	return false;
+});
+
+function popupClose( $id ) {
+	$('body').removeClass('popupOpened');
+	$('.popup.opened').removeClass('opened');
+}
+$('.popup i.bg, .popup button.close').click( function() {
+	popupClose( '#'+$(this).closest('.popup').attr('id') );
+} );
+// /Popups
+```
+
+
+## Paralax - Параллакс элементов при склолинге
 ```HTML
 <div class="parent">
 	<i class="parallax el1" data-k="0.8"></i>
@@ -320,7 +417,7 @@ function floating() {
 			parentH		= parent.outerHeight(),
 			marginT		= 0,
 			rotate		= 0;
-
+		
 		if (
 				(scrollTop >= parentTop && scrollTop <= parentTop+parentH) ||
 				(scrollB >= parentTop && scrollB <= parentTop+parentH) ||
@@ -339,44 +436,6 @@ function floating() {
 }
 floating();
 // /floating elements
-```
-
-
-## Slick-slider
-[slick.js](https://foxk.ru/slider/slick.js)<br>
-[slick.css](https://foxk.ru/slider/slick.css)<br>
-[slick-theme.css](https://foxk.ru/slider/slick-theme.css) (необязательно)
-```javascript
-// Slider
-let $gallery	= $('#gallery .inner');
-
-$gallery.slick({
-	infinite:		true,
-	slidesToShow:	3,
-	slidesToScroll:	1,
-	arrows:			false,
-	adaptiveHeight:	true,
-	swipeToSlide:	true,
-	centerMode:		true,
-	responsive: [
-		{
-			breakpoint: 991,
-			settings: {
-				slidesToShow:	1,
-				swipe:			true,
-			}
-		},
-	],
-});
-$('#gallery').on('click', '.control.prev', function() {
-	$gallery.slick('slickPrev');
-	return false;
-});
-$('#gallery').on('click', '.control.next', function() {
-	$gallery.slick('slickNext');
-	return false;
-});
-// /Slider
 ```
 
 
@@ -405,7 +464,48 @@ data-wow-iteration="" Количество повторов
 ```
 
 
+## IMask - Маска для ввода номера телефона для нескольких стран
+[imask.js](https://foxk.ru/imask/imask.js)
+```javascript
+// Phone mask
+const phoneMaskInputs	= document.querySelectorAll('.phone-mask');
+const masksOptions		= {
+	mask: [
+		{
+			mask: '+380 00 000 00 00',
+			startsWith: '38',
+			country: 'Ukraine'
+		},
+		{
+			mask: '+0 000 000 00 00',
+			startsWith: '7',
+			country: 'Russia'
+		},
+		{
+			mask: '+375 00 000 00 00',
+			startsWith: '37',
+			country: 'Belarus'
+		},
+		{
+			mask: '+0000000000000',
+			startsWith: '',
+			country: 'unknown'
+		},
+	],
+	dispatch: function (appended, dynamicMasked) {
+		var number = (dynamicMasked.value + appended).replace(/\D/g,'');
+		
+		return dynamicMasked.compiledMasks.find(function (m) {
+			return number.indexOf(m.startsWith) === 0;
+		});
+	}
+};
 
+for ( const item of phoneMaskInputs ) {
+	new IMask(item, masksOptions);
+}
+// /Phone mask
+```
 
 
 
