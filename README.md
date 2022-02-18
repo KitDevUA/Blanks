@@ -297,11 +297,12 @@ $('#gallery').on('click', '.control.next', function() {
 	bottom: 0
 	z-index: 10
 	&:not(.opened)
-		display: none
+		opacity: 0
+		z-index: -10
 	i.bg
 		width: 100%
 		height: 100%
-		background-color: rgba($black, .8)
+		background-color: rgba(#000, .7)
 		position: absolute
 		top: 0
 		left: 0
