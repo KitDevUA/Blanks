@@ -15,6 +15,7 @@
 ```
 
 **Vue js - простое подключение**
+[vue.js](https://foxk.ru/libs/vue.js)
 ```HTML
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 ```
